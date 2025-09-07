@@ -67,9 +67,9 @@ public class OOPS {
         System.out.println(calc.sum(5, 8, 6));
 
         // Abstraction 
-        Horse h = new Horse();
-        h.eat();
-        h.walk();
+        // Horse h = new Horse();
+        // h.eat();
+        // h.walk();
     }
 }
 
@@ -283,31 +283,62 @@ class Calculator {
 
 // Abstraction
 
-abstract class Animal {
-    String color;
-    Animal() { // Constructor
-        color = "brown";
+// abstract class Animal {
+//     String color;
+//     Animal() { // Constructor
+//         color = "brown";
+//     }
+//     void eat() {
+//         System.out.println("animal eat");
+//     }
+//     abstract void walk(); // It just gives the idea that walk function must be in the child classes
+// }
+
+// class Horse extends Animal {
+//     void changeColor() {
+//         color = "dark brown";
+//     }
+//     void walk() {
+//         System.out.println("4 legs");
+//     }
+// }
+
+// class Chicken extends Animal {
+//     void changeColor() {
+//         color = "white";
+//     }
+//     void walk() {
+//         System.out.println("walk on 2 legs");
+//     }
+// }
+
+// Static Keywords
+
+class Students {
+    String name;
+    int roll;
+    static String schoolName;
+
+    void getName(String name) {
+        this.name = name;
     }
-    void eat() {
-        System.out.println("animal eat");
+
+    void setName(String name) {
+
     }
-    abstract void walk(); // It just gives the idea that walk function must be in the child classes
 }
 
-class Horse extends Animal {
-    void changeColor() {
-        color = "dark brown";
-    }
-    void walk() {
-        System.out.println("4 legs");
+// Super Keyword 
+
+class Animal {
+    Animal() {
+        System.out.println("Animal constructor is called");
     }
 }
 
-class Chicken extends Animal {
-    void changeColor() {
-        color = "white";
-    }
-    void walk() {
-        System.out.println("walk on 2 legs");
+class horse extends Animal {
+    horse() {
+        super();
+        System.out.println("I am horse");
     }
 }
