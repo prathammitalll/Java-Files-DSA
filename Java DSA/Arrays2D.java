@@ -1,27 +1,46 @@
 public class Arrays2D {
-    public static void printSpiral(int matrix[][]) {
-        int startRow = 0, startCol = 0, EndRow = matrix.length - 1, endCol = matrix[0].length - 1;
+    public static void Transpose(int matrix[][]) {
+        int rows = matrix.length;
+        int cols = matrix[0].length;
 
-        while(startRow <= EndRow && startCol <= endCol) {
+        int[][] transpose = new int[cols][rows];
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                transpose[j][i] = matrix[i][j];
+            }
+        }
+
+        for (int[] row: matrix) {
+            for (int val: row) {
+                System.out.println(val+" ");
+            }
+            System.out.println();
+        }
+    }
+    public static void printSpiral(int matrix[][]) {
+        int startRow = 0, startCol = 0, endRow = matrix.length - 1, endCol = matrix[0].length - 1;
+
+        while(startRow <= endRow && startCol <= endCol) {
             //top
             for (int i=startCol; i<=endCol; i++) {
                 System.out.print(matrix[startRow][i]+" ");
             }
 
             //right
-            for (int i=startRow+1; i<=EndRow; i++) {
+            for (int i=startRow+1; i<=endRow; i++) {
                 System.out.print(matrix[i][endCol]+" ");
             }
 
             //bottom
             for (int i=endCol-1; i>=startCol; i--) {
-                if (startRow == EndRow) {
+                if (startRow == endRow) {
                     break;
                 }
-                System.out.print(matrix[EndRow][i]+" ");
+                System.out.print(matrix[endRow][i]+" ");
             }
             //left
-            for (int i=EndRow-1; i>=startRow+1; i--) {
+            for (int i=endRow-1; i>=startRow+1; i--) {
                 if (startCol == endCol) {
                     break;
                 }
@@ -30,7 +49,7 @@ public class Arrays2D {
 
             startRow++;
             startCol++;
-            EndRow--;
+            endRow--;
             endCol--;
         }
         System.out.println();
